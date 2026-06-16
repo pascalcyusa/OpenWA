@@ -55,6 +55,8 @@ services:
       - WEBHOOK_MAX_RETRIES=3
       - QUEUE_ENABLED=false
       - WWEBJS_WEB_VERSION=${WWEBJS_WEB_VERSION:-}
+      - WEBHOOK_SSRF_PROTECT=${WEBHOOK_SSRF_PROTECT:-true}
+      - SSRF_ALLOWED_HOSTS=${SSRF_ALLOWED_HOSTS:-}
     volumes:
       - ./data:/app/data
     restart: unless-stopped
